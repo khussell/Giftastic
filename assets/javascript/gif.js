@@ -1,7 +1,7 @@
 var buttonsArea= $("#buttonsArea"),
     gifsArea= $("#gifsArea"),
     submit= $("#submit"),
-    array=["Taco", "Cheeseburger", "Ice Cream", "Hot Dog", "Pizza", "Fries", "Peanut Butter", "Turkey"]
+    array=["Taco","Cookie", "Burrito", "Cheeseburger", "Spaghetti", "Donuts","Ice Cream", "Hot Dog", "Pizza", "Fries","Pancake", "Muffin", "Peanut Butter", "Turkey", "Bacon", "Cheetos", "Carrots"]
 
 
 $(document).ready(function(){
@@ -32,11 +32,10 @@ submit.on("click", function(){
 })
 
 
-$("button").on("click",function(){
+$("#buttonsArea").on("click", "button",function(){
     var food= $(this).data("food")
 
-    var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=xfOXGaT5zSiJEMcIqabs4Iy7ccrIigZd&q=" + food + "&limit=10&offset=0&lang=en"
-
+    var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=xfOXGaT5zSiJEMcIqabs4Iy7ccrIigZd&q=" + food + "&limit=5&offset=0&lang=en"
 
     $.ajax({
         url: queryURL,
@@ -46,43 +45,52 @@ $("button").on("click",function(){
 
          for (var i=0; i < response.data.length; i++){
              var newP= $("<p>").text("Rated: " + response.data[i].rating)
+             newP.attr("id", "rating")
 
-             var newImg= $('<img>').attr("src", response.data[i].images.fixed_height.url)
+             var newImg= $('<img>').attr("src", response.data[i].images.fixed_height_small_still.url)
+                                   .attr("data-state", "still")
+                                   .attr("data-still", response.data[i].images.fixed_height_small_still.url)
+                                   .attr("data-animate", response.data[i].images.fixed_height_small.url)
+                                   .attr("id", "gif")
 
-
-
-
-             gifsArea.append(newP)
-             gifsArea.append(newImg)
-         }
-
-    })
-
+             gifsArea.prepend(newP)
+             gifsArea.prepend(newImg)
 
 
 
+                 
+    
+         }  
+         
+   
+      
+      }) 
+      
+      
 
 
+   
 
 
 })
 
 
 
+   
+$("#gifsArea").on("click", "#gif", function(){
+    var state= $(this).attr("data-state")
 
+   if( state === "still"){
+        $(this).attr("src", $(this).attr("data-animate"))
+        $(this).attr("data-state", "animate")
 
+   } 
+     else if ( state === "animate"){
+        $(this).attr("src", $(this).attr("data-still"))
+        $(this).attr("data-state", "still")
+   }
 
-
-
-
-
-
-
-
-
-
-
-
+})  
 
 
 
