@@ -140,10 +140,11 @@ $("#buttonsArea").on("click", "#favorite", function(){
 
 $("#favoritesArea").on("click", "#favorite", function(){
     var current= $(this).data("food")
+    $(this).html("&#10003;")
    var pairedButton= $('[data-food="'+ current +'"]')
 
   $("#buttonsArea").append(pairedButton)
-                   .append(current)
+                   
 })
 
 
