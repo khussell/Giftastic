@@ -8,9 +8,24 @@ $(document).ready(function(){
 
 var showButtons= function(){
   for (var i=0; i < array.length; i ++){
+    var newDiv= $("<div>").addClass("buttonDiv")
+                          .attr("data-food", array[i])
     var newButton= $("<button>").attr("data-food", array[i])
     newButton.text(array[i])
-    buttonsArea.append(newButton)
+    
+
+
+    var buttonOnButton=$("<button>").attr("id", "favorite")
+                                    .attr("data-food", array[i])
+                                    .html("&#10003;")
+                                    .attr("data-check", "yes")
+    
+
+
+    newDiv.append(newButton)
+          .append(buttonOnButton)
+    
+    buttonsArea.append(newDiv)
 }
 }
 
@@ -22,7 +37,7 @@ submit.on("click", function(){
     buttonsArea.empty()
 
     var userChoice= $("#userChoice").val()
-    array.push(userChoice)
+    array.unshift(userChoice)
 
 
    $("#userChoice").val("")
@@ -33,6 +48,9 @@ submit.on("click", function(){
 
 
 $("#buttonsArea").on("click", "button",function(){
+    var hasCheck= $(this).data("check")
+
+    if(hasCheck !== "yes"){
     var food= $(this).data("food")
 
     var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=xfOXGaT5zSiJEMcIqabs4Iy7ccrIigZd&q=" + food + "&limit=5&offset=0&lang=en"
@@ -53,6 +71,18 @@ $("#buttonsArea").on("click", "button",function(){
                                    .attr("data-animate", response.data[i].images.fixed_height_small.url)
                                    .attr("id", "gif")
 
+
+
+
+
+       //trying one click download                            
+       //      var newDownloadButton= $("<a download>").attr("id", "downloadButton")  
+        //                              .attr("href", "/media/lUnbg5saTIVjO/100.gif")
+                                     
+                                     
+       //                              .text("Download!")   
+
+       //     gifsArea.prepend(newDownloadButton)
              gifsArea.prepend(newP)
              gifsArea.prepend(newImg)
 
@@ -63,14 +93,14 @@ $("#buttonsArea").on("click", "button",function(){
          }  
          
    
-      
+    
       }) 
       
       
 
 
    
-
+    }
 
 })
 
@@ -91,6 +121,111 @@ $("#gifsArea").on("click", "#gif", function(){
    }
 
 })  
+
+
+
+
+$("#buttonsArea").on("click", "#favorite", function(){
+   var current= $(this).data("food")
+   var unFavorite= $(this).html("-")
+   var pairedButton= $('[data-food="'+ current +'"]')
+
+  $("#favoritesArea").append(pairedButton)
+
+      
+
+
+})
+
+
+$("#favoritesArea").on("click", "#favorite", function(){
+    var current= $(this).data("food")
+   var pairedButton= $('[data-food="'+ current +'"]')
+
+  $("#buttonsArea").append(pairedButton)
+                   .append(current)
+})
+
+
+
+
+
+
+
+$("#favoritesArea").on("click", "button",function(){
+    var hasCheck= $(this).data("check")
+
+    if(hasCheck !== "yes"){
+    var food= $(this).data("food")
+
+    var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=xfOXGaT5zSiJEMcIqabs4Iy7ccrIigZd&q=" + food + "&limit=5&offset=0&lang=en"
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+         console.log(response)
+
+         for (var i=0; i < response.data.length; i++){
+             var newP= $("<p>").text("Rated: " + response.data[i].rating)
+             newP.attr("id", "rating")
+
+             var newImg= $('<img>').attr("src", response.data[i].images.fixed_height_small_still.url)
+                                   .attr("data-state", "still")
+                                   .attr("data-still", response.data[i].images.fixed_height_small_still.url)
+                                   .attr("data-animate", response.data[i].images.fixed_height_small.url)
+                                   .attr("id", "gif")
+
+
+
+
+
+       //trying one click download                            
+       //      var newDownloadButton= $("<a download>").attr("id", "downloadButton")  
+        //                              .attr("href", "/media/lUnbg5saTIVjO/100.gif")
+                                     
+                                     
+       //                              .text("Download!")   
+
+       //     gifsArea.prepend(newDownloadButton)
+             gifsArea.prepend(newP)
+             gifsArea.prepend(newImg)
+
+
+
+                 
+    
+         }  
+         
+   
+    
+      }) 
+      
+      
+
+
+   
+    }
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -32,6 +32,17 @@ form,
     float: left;
 }
 
+#buttonsArea{
+    overflow-y: auto;
+    height: 300px;
+    border: 2px white solid;
+    background-color:rgba(13,119,172, .6);
+    width: 180px;
+    margin-top: 10px;
+    margin-left: 10px;
+    
+}
+
 
 .all{
     position: fixed;
@@ -85,7 +96,7 @@ button:hover{
         color: white ;
         text-shadow: 1px 1px black;
         padding: 5px 10px;
-        margin: 20px 0px 0px 40px;
+        margin: 20px 0px 0px 10px;
         font-weight: bold;
         margin-top: 10px;
         font-size: 20px;
@@ -115,6 +126,7 @@ input{
     font-size: 12px;
     color: #0e638d;
     font-weight: bold;
+    margin-bottom: 3px;
 }
 
 #gif{
@@ -141,4 +153,28 @@ h1{
     font-size: 40px;
     margin: 20px 0px;
     text-shadow: 4px 2px #0e638d;
+}
+
+.favorites{
+    position: absolute;
+    top:0;
+    right: -230px;
+    width: 210px;
+    height: 200px;
+
+}
+
+
+
+
+
+#favoritesArea{
+    overflow-y: auto;
+    height: 200px;
+    border: 2px white solid;
+    background-color:rgba(13,119,172, .6);
+    width: 180px;
+    margin-top: 10px;
+    margin-left: 10px;
+    
 }
