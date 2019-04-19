@@ -461,7 +461,7 @@ h1{
     
     .all{
         position: fixed;
-        left: 18%;
+        left: 160px;
     
     
         width: 500px;
@@ -612,7 +612,7 @@ h1{
 
     /* landscape phone */
 
-    @media screen and (max-width: 810px){
+    @media screen and (max-width: 578px){
 
         body{
             background-image: url(../images/clouds.jpg);
