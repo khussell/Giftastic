@@ -13,15 +13,11 @@ body{
     color: white;
     font-size: 18px;
     position: fixed;
-    
-    
- 
 }
 
 
 .float{
     width: 250px;
-
 }
 
 .subHeading,
@@ -39,16 +35,13 @@ form,
     background-color:rgba(13,119,172, .6);
     width: 180px;
     margin-top: 10px;
-    margin-left: 10px;
-    
+    margin-left: 10px;   
 }
 
 
 .all{
     position: fixed;
     left: 18%;
-
-
     width: 1000px;
     margin: 20px auto;
     height: 645px;
@@ -67,7 +60,6 @@ form,
     bottom: 0;
     height: 400px;
     right: 30px;
-   
 }
 
 
@@ -84,30 +76,27 @@ button{
 
 button:hover{
     border: 2px white solid;
-    
     background-color: #0e638d;
     color: white;
 }
 
 #submit{
-        border: 3px white solid;
-        border-radius: 20%;
-        background-color:  #0e638d;
-        color: white ;
-        text-shadow: 1px 1px black;
-        padding: 5px 10px;
-        margin: 20px 0px 0px 10px;
-        font-weight: bold;
-        margin-top: 10px;
-        font-size: 20px;
-    
+    border: 3px white solid;
+    border-radius: 20%;
+    background-color:  #0e638d;
+    color: white ;
+    text-shadow: 1px 1px black;
+    padding: 5px 10px;
+    margin: 20px 0px 0px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;    
 }
 
 #submit:hover{
     border: 3px #0e638d solid;
-        
-        background-color: white ;
-        color: #0e638d;
+    background-color: white ;
+    color: #0e638d;
 }
 
 label,
@@ -130,9 +119,8 @@ input{
 }
 
 #gif{
-    
     border: 2px solid white;
-            border-radius: 20%;
+    border-radius: 20%;
 }
 
 #gif:hover{
@@ -162,11 +150,7 @@ h1{
     right: -230px;
     width: 210px;
     height: 200px;
-
 }
-
-
-
 
 
 #favoritesArea{
@@ -177,7 +161,6 @@ h1{
     width: 180px;
     margin-top: 10px;
     margin-left: 10px;
-    
 }
 
 
@@ -201,29 +184,17 @@ h1{
 @media screen and (max-width: 1450px){
 
 body{
-    background-image: url(../images/clouds.jpg);
-    background-size: cover;
-    position: relative;
-    height: 560px;
-    font-family: 'Karla', sans-serif;
+    height: 560px; 
 }
 
 
 .content{
-    width: 100%;
     height: 560px;
-    color: white;
-    font-size: 18px;
-    position: fixed;
-    
-    
- 
 }
 
 
 .float{
     width: 150px;
-
 }
 
 .subHeading,
@@ -231,7 +202,6 @@ form,
 #buttonsArea{
     width: 150px;
     padding: 10px;
-    float: left;
 }
 
 #buttonsArea{
@@ -247,37 +217,20 @@ form,
 
 
 .all{
-    position: fixed;
-    left: 18%;
-
-
     width: 600px;
     margin: 20px auto;
     height: 430px;
-    background-image: url(../images/cart.jpg);
     background-size: 650px, auto;
-    background-repeat: no-repeat;
-    border: 2px solid white;
-    border-radius: 30%;
-    text-align: center;
-    color: white;
     font-size: 30px;
 }
 
 #dog{
-    position: fixed;
-    bottom: 0;
     height: 300px;
     left: 750px;
-   
 }
 
 
 button{
-    border: 2px  #0e638d solid;
-    border-radius: 20%;
-    background-color: white;
-    color: grey;
     padding: 5px;
     margin: 3px;
     font-weight: bold;
@@ -286,9 +239,6 @@ button{
 
 button:hover{
     border: 2px white solid;
-    
-    background-color: #0e638d;
-    color: white;
 }
 
 #submit{
@@ -301,15 +251,11 @@ button:hover{
         margin: 20px 0px 0px 10px;
         font-weight: bold;
         margin-top: 10px;
-        font-size: 10px;
-    
+        font-size: 10px;   
 }
 
 #submit:hover{
     border: 3px #0e638d solid;
-        
-        background-color: white ;
-        color: #0e638d;
 }
 
 label,
@@ -402,11 +348,6 @@ h1{
 
 
 
-
-
-
-
-
 /*tablet size screen*/
 
 
@@ -428,9 +369,6 @@ h1{
         color: white;
         font-size: 18px;
         position: fixed;
-        
-        
-     
     }
     
     
@@ -462,8 +400,6 @@ h1{
     .all{
         position: fixed;
         left: 160px;
-    
-    
         width: 500px;
         margin: 20px auto;
         height: 330px;
@@ -499,7 +435,6 @@ h1{
     
     button:hover{
         border: 2px white solid;
-        
         background-color: #0e638d;
         color: white;
     }
@@ -519,10 +454,9 @@ h1{
     }
     
     #submit:hover{
-        border: 3px #0e638d solid;
-            
-            background-color: white ;
-            color: #0e638d;
+        border: 3px #0e638d solid; 
+        background-color: white ;
+        color: #0e638d;
     }
     
     label,
@@ -547,9 +481,8 @@ h1{
     }
     
     #gif{
-        
         border: 2px solid white;
-            border-radius: 20%;
+        border-radius: 20%;
     }
     
     #gif:hover{
@@ -629,15 +562,11 @@ h1{
             color: white;
             font-size: 18px;
             position: fixed;
-            
-            
-         
         }
         
         
         .float{
             width: 145px;
-        
         }
         
         .subHeading,
@@ -645,8 +574,7 @@ h1{
         #buttonsArea{
             width: 145px;
             padding: 10px;
-            float: left;
-            
+            float: left;  
         }
         
         #buttonsArea{
@@ -656,16 +584,13 @@ h1{
             background-color:rgba(13,119,172, .6);
             width: 80px;
             margin-top: 10px;
-            margin-left: 10px;
-            
+            margin-left: 10px;   
         }
         
         
         .all{
             position: fixed;
             left: 130px;
-        
-        
             width: 270px;
             margin: 20px auto;
             height: 240px;
@@ -683,8 +608,7 @@ h1{
             position: fixed;
             bottom: 0;
             height: 130px;
-            left: 410px;
-           
+            left: 410px; 
         }
         
         
@@ -701,7 +625,6 @@ h1{
         
         button:hover{
             border: 2px white solid;
-            
             background-color: #0e638d;
             color: white;
         }
@@ -722,10 +645,9 @@ h1{
         }
         
         #submit:hover{
-            border: 3px #0e638d solid;
-                
-                background-color: white ;
-                color: #0e638d;
+            border: 3px #0e638d solid;   
+            background-color: white ;
+            color: #0e638d;
         }
         
         label,
@@ -751,7 +673,6 @@ h1{
         }
         
         #gif{
-            
             border: 2px solid white;
             border-radius: 20%;
         }
@@ -785,8 +706,6 @@ h1{
             right: -110px;
             width: 100px;
             height: 100px;
-            
-        
         }
         
         
@@ -800,8 +719,7 @@ h1{
             background-color:rgba(13,119,172, .9);
             width: 100px;
             margin-top: 20px;
-            margin-left: 10px;
-            
+            margin-left: 10px; 
         }
     
         h3{
@@ -835,9 +753,6 @@ h1{
             color: white;
             font-size: 18px;
             position: fixed;
-            
-            
-         
         }
         
         
@@ -853,9 +768,6 @@ h1{
             padding: 10px;
             float: left;
             margin-top: 120px;
-           
-            
-            
         }
         
         #buttonsArea{
@@ -866,15 +778,12 @@ h1{
             width: 80px;
             margin-top: 10px;
             margin-left: 10px;
-            
         }
         
         
         .all{
             position: fixed;
             left: 10px;
-        
-        
             width: 265px;
             margin: 50px auto;
             height: 220px;
@@ -893,7 +802,6 @@ h1{
             bottom: 0;
             height: 120px;
             left: 150px;
-           
         }
         
         
@@ -910,7 +818,6 @@ h1{
         
         button:hover{
             border: 2px white solid;
-            
             background-color: #0e638d;
             color: white;
         }

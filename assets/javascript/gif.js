@@ -1,9 +1,10 @@
-
 //starting with my variables that store display areas, submit button, and array of my favorite foods
 var buttonsArea= $("#buttonsArea"),
     gifsArea= $("#gifsArea"),
     submit= $("#submit"),
     array=["Taco","Cookie", "Burrito", "Cheeseburger", "Spaghetti", "Donuts","Ice Cream", "Hot Dog", "Pizza", "Fries","Pancake", "Muffin", "Peanut Butter", "Turkey", "Bacon", "Cheetos", "Carrots"]
+
+
 
 
 //starting it out
@@ -159,24 +160,29 @@ $("#gifsArea").on("click", "#gif", function(){
 
 //when buttons area is clicked and it is a button with an id of favorite
 //the buttons food data will be stored in current
-
+//updated favorite button html to "-" (for when user wants to remove it)
 $("#buttonsArea").on("click", "#favorite", function(){
    var current= $(this).data("food")
    $(this).html("-")
+
+   //pairedButton will store any buttons that have food data of current(actual food button and paired favorite button)
    var pairedButton= $('[data-food="'+ current +'"]')
 
+//appending both buttons to the favorites area with the "-" symbol instead
   $("#favoritesArea").append(pairedButton)
-
-      
-
 
 })
 
 
+
+
+
+//when favorites area is clicked and it is a button with id of favorite the paired buttons will go back
+//to buttons area with the favorite button having the new check symbol
 $("#favoritesArea").on("click", "#favorite", function(){
     var current= $(this).data("food")
     $(this).html("&#10003;")
-   var pairedButton= $('[data-food="'+ current +'"]')
+    var pairedButton= $('[data-food="'+ current +'"]')
 
   $("#buttonsArea").append(pairedButton)
                    
@@ -187,7 +193,7 @@ $("#favoritesArea").on("click", "#favorite", function(){
 
 
 
-
+//same logic as above except user can click on food button from FAVORITES area and the gifs will render in gifs area
 $("#favoritesArea").on("click", "button",function(){
     var hasCheck= $(this).data("check")
 
@@ -213,55 +219,16 @@ $("#favoritesArea").on("click", "button",function(){
                                    .attr("id", "gif")
 
 
-
-
-
-       //trying one click download                            
-       //      var newDownloadButton= $("<a download>").attr("id", "downloadButton")  
-        //                              .attr("href", "/media/lUnbg5saTIVjO/100.gif")
-                                     
-                                     
-       //                              .text("Download!")   
-
-       //     gifsArea.prepend(newDownloadButton)
              gifsArea.prepend(newP)
-             gifsArea.prepend(newImg)
-
-
-
-                 
+             gifsArea.prepend(newImg)       
     
          }  
-         
-   
     
       }) 
-      
-      
-
-
    
     }
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
